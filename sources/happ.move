@@ -13,7 +13,7 @@ fun init(witness: HAPP, ctx: &mut TxContext) {
     b"HAPP",
     b"HAPP Coin",
     b"Ethereum Native Coin",
-    option::some(url::new_unsafe_from_bytes(b"https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png")),
+    option::some(url::new_unsafe_from_bytes(b"https://www.cryptologos.cc/logos/hedera-hbar-logo.png?v=040")),
     ctx
   );
 
@@ -21,4 +21,10 @@ fun init(witness: HAPP, ctx: &mut TxContext) {
 
   transfer::public_share_object(metadata);
 }
+
+
+  #[test_only]
+  public fun init_for_testing(ctx: &mut TxContext) {
+    init(HAPP {}, ctx);
+  }
 }
